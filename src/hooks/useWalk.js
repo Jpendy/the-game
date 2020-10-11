@@ -4,9 +4,8 @@ export default function useWalk(maxSteps) {
     const [position, setPosition] = useState({ x: 0, y: 0 })
     const [dir, setDir] = useState(0);
     const [step, setStep] = useState(0);
-    console.log(dir)
-    console.log(position.x)
 
+    console.log(position)
     const directions = {
         down: 0,
         left: 1,
@@ -14,7 +13,7 @@ export default function useWalk(maxSteps) {
         up: 3,
     }
 
-    const stepSize = 6;
+    const stepSize = 10;
 
     const modifier = {
         down: { x: 0, y: stepSize },

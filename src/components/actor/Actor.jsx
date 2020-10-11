@@ -5,7 +5,7 @@ export default function Actor({ data, position = { x: 0, y: 0 }, step = 0, dir =
     const { height, width } = data;
 
     return (
-        <div>
+        <>
             <Sprite
                 position={position}
                 data={{
@@ -14,6 +14,6 @@ export default function Actor({ data, position = { x: 0, y: 0 }, step = 0, dir =
                     width,
                     height,
                 }} />
-        </div>
+        </>
     )
 }

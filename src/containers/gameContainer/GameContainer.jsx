@@ -1,13 +1,22 @@
 import React from 'react';
-import MainCharacter from '../../components/mainCharacter/MainCharacter';
+import Character from '../../components/character/Character';
+import Map from '../../components/map/Map'
 
 export default function GameContainer() {
 
 
     return (
         <div>
-            <MainCharacter />
-            hello map
+            <Character />
+            <section style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}>
+                <Map />
+            </section>
+
+            {/* hello map */}
         </div>
     )
 }
