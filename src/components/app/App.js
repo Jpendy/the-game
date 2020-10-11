@@ -4,7 +4,8 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import Map from '../map/Map'
+import GameContainer from '../../containers/gameContainer/GameContainer';
+import Map from '../../containers/gameContainer/GameContainer'
 
 import './App.css';
 
@@ -13,7 +14,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" component={Map} />
+        <Route path="/" component={GameContainer} />
         {/* <Route path="/map" component={} /> */}
 
       </Switch>
