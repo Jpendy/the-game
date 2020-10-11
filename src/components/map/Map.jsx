@@ -1,5 +1,6 @@
 import React from 'react'
 import Canvas from '../canvas/Canvas'
+import Character from '../character/Character';
 import './Map.css'
 
 export default function Map() {
@@ -12,15 +13,21 @@ export default function Map() {
     const mapWidth = 50;
 
     const mapGrid = [...Array(mapWidth)].map((_, x) => {
-        return (<div className={`column-${(x + 1)} column`} >
+        const xAxis = (x + 1)
+        return (<div className={`column-${xAxis} column`} >
 
             {[...Array(mapHeight)].map((_, y) => {
-                return (<div id={`box-${(x + 1)}-${(y + 1)} row row-${(y + 1)}`} style={{
+                const yAxis = (y + 1)
+                return (<div className={`box box-${xAxis}-${yAxis} row row-${yAxis}`} style={{
                     border: "1px solid black",
                     height,
                     width,
                     backgroundColor:
-                        ((x + 1) === 1 || (x + 1) === 50 || (y + 1) === (1) || (y + 1) === 24) ? 'brown' : 'lightskyblue'
+                        xAxis === 1 || xAxis === 50 || yAxis === 1 || yAxis === 24
+                            ? 'brown'
+                            : xAxis > 20 && xAxis < 30 && yAxis > 8 && yAxis < 15
+                            && 'lightskyblue'
+
                     // background: ((y + 1) % 2 === 1 && (x + 1) % 2 === 1) ? 'green' : ((y + 1) % 2 === 0 && (x + 1) % 2 === 0) && "blue",
                 }}>
 
@@ -32,6 +39,7 @@ export default function Map() {
 
     return (
         <div className={"board-container"}>
+            <Character />
             {mapGrid}  {/* <Canvas /> */}
         </div>
     )

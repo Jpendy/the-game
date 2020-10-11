@@ -7,7 +7,7 @@ export default function GameContainer() {
 
     return (
         <div>
-            <Character />
+
             <section style={{
                 display: 'flex',
                 justifyContent: 'center',

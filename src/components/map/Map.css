@@ -7,20 +7,31 @@
 
 
 .board-container {
+    position: relative;
     display: flex;
     justify-content: center;
 }
 
+.column {
+    background: -webkit-linear-gradient(green, lightgreen);
+}
 
+.row-2, .row-23 {
+    background-color: rgb(136, 32, 132);
+}
 
-/* .row {
+.column-2, .column-49 {
+    background: -webkit-linear-gradient(orchid, purple);
+}
+
+ .row {
     display: flex;
     align-content: center;
 }
 
-.column{
-    background: -webkit-linear-gradient(lightskyblue, lightblue);
-}
+
+
+/*
 
 .column-1, .column-50, .row-1, .row-24, .box-1-23, .box-50-23  {
     background-color: brown !important;
