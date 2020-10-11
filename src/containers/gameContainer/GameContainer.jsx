@@ -11,7 +11,7 @@ export default function GameContainer() {
             <section style={{
                 display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignContent: 'center'
             }}>
                 <Map />
             </section>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { edgesOfMap, edgesOfLake } from '../data/obstacles/obstacles.js'
 
 export default function useWalk(maxSteps) {
     const [position, setPosition] = useState({ x: 500, y: 300 })
@@ -12,6 +13,8 @@ export default function useWalk(maxSteps) {
         right: 2,
         up: 3,
     }
+
+
 
     const stepSize = 10;
 
@@ -33,21 +36,33 @@ export default function useWalk(maxSteps) {
         setStep((prev) => (prev < maxSteps - 1 ? prev + 1 : 0))
     }
 
+
+
     function move(dir) {
+        const { left, top, right, bottom } = edgesOfMap;
+        const { left: leftLake, top: topLake, right: rightLake, bottom: bottomLake, midLake } = edgesOfLake;
+
         setPosition(prev => {
 
-            if (prev.x > 1510 || prev.y > 688) {
-                return {
-                    y: prev.y - 2,
-                    x: prev.x - 2,
-                }
-            } else if (prev.x < 6 || prev.y < 5) {
-                return {
-                    y: prev.y + 2,
-                    x: prev.x + 2
-                }
+            if (prev.x < left) return { ...prev, x: prev.x + 2 }
+            if (prev.x > right) return { ...prev, x: prev.x - 2 }
+            if (prev.y > bottom) return { ...prev, y: prev.y - 2 }
+            if (prev.y < top) return { ...prev, y: prev.y + 2 }
 
-            } else return {
+            if (prev.x > leftLake && prev.y > topLake && prev.x < rightLake && prev.y < bottomLake) {
+                // alert('You Drowned')
+                return {
+                    x: prev.x - 2,
+                    y: prev.y - 2
+                }
+            } else if (prev.y > bottomLake && prev.y < topLake && prev.x < rightLake && prev.x > leftLake) {
+                return {
+                    x: prev.x + 2,
+                    y: prev.y + 2
+                }
+            }
+
+            else return {
                 x: prev.x + modifier[dir].x,
                 y: prev.y + modifier[dir].y
             }

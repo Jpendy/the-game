@@ -19,7 +19,7 @@ export default function Map() {
             {[...Array(mapHeight)].map((_, y) => {
                 const yAxis = (y + 1)
                 return (<div className={`box box-${xAxis}-${yAxis} row row-${yAxis}`} style={{
-                    border: "1px solid black",
+                    // border: "1px solid black",
                     height,
                     width,
                     backgroundColor:
@@ -27,8 +27,10 @@ export default function Map() {
                             ? 'brown'
                             : xAxis > 20 && xAxis < 30 && yAxis > 8 && yAxis < 15
                             && 'lightskyblue'
-
-                    // background: ((y + 1) % 2 === 1 && (x + 1) % 2 === 1) ? 'green' : ((y + 1) % 2 === 0 && (x + 1) % 2 === 0) && "blue",
+                    ,
+                    // background: yAxis % 2 === 1 && xAxis % 2 === 1
+                    //     ? 'green'
+                    //     : yAxis % 2 === 0 && xAxis % 2 === 0 && "blue",
                 }}>
 
                 </div>)
