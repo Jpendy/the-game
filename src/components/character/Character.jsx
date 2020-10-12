@@ -6,6 +6,7 @@ import Actor from '../actor/Actor';
 
 export default function Character() {
 
+
     const { dir, step, position, walk } = useWalk(3);
 
     const data = {

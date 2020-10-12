@@ -1,8 +1,8 @@
 export const edgesOfMap = {
-    left: 6,
-    top: 5,
-    right: 1410,
-    bottom: 636
+    left: 120,
+    top: 120,
+    right: 1200,
+    bottom: 600
 }
 
 export const edgesOfLake = {

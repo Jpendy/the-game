@@ -1,18 +1,14 @@
 
-/* .row-1 .column-1, .row-2 .column-2{
-    background-color: blue;
-} */
-
-/* * {
-    box-sizing: border-box;
-} */
-
 body {
-    margin-top: 30px;
+  
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+
+div {
+    box-sizing: border-box;
 }
 
 
@@ -27,7 +23,7 @@ body {
     background: -webkit-linear-gradient(green, lightgreen);
 }
 
-.row-2, .row-23 {
+.row-2, .row-24 {
     background-color: rgb(136, 32, 132);
 }
 
@@ -40,17 +36,10 @@ body {
     align-content: center;
 }
 
-
-
-/*
-
-.column-1, .column-50, .row-1, .row-24, .box-1-23, .box-50-23  {
-    background-color: brown !important;
-    z-index: 100;
+.row-1, .row-25, .column-1 > div, .column-50 > div{
+    background-color: sandybrown;
 }
 
-.column-2, .column-49, .row-2 , .row-23 {
-    background-color: orange;
-} */
-
-
+.box-25-15, .box-25-16 {
+    background: lightskyblue;
+}
