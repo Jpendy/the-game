@@ -4,7 +4,7 @@ import useKeyPress from '../../hooks/useKeyPress';
 import useWalk from '../../hooks/useWalk';
 import Actor from '../actor/Actor';
 
-export default function Character({ spriteImage, startingPosition }) {
+export default function BetterEnemy({ spriteImage, startingPosition }) {
 
 
     const { dir, step, position, walk } = useWalk(3, startingPosition);

@@ -1,17 +1,17 @@
 
 export const initialState = {
     mainCharacter: {
-        x: 0,
-        y: 0,
-        width: 32,
-        height: 32
+        x: 500,
+        y: 200,
+        width: 50,
+        height: 50
     },
 
     enemy: {
         x: 500,
         y: 500,
-        width: 32,
-        height: 32
+        width: 50,
+        height: 50
     }
 }
 

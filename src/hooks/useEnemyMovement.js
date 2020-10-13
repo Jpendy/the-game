@@ -24,14 +24,14 @@ export default function useEnemyMovement(enemyStartingPosition) {
 
             const randomNumber = Math.floor(Math.random() * 4)
             movement(directions[randomNumber])
-        }, 200)
+        }, 8000)
 
     }, [])
 
     // const stepSize = 13
 
     function movement(dir) {
-        const stepSize = Math.floor(Math.random() * 2)
+        const stepSize = 10
 
         if (dir === 'right') setEnemyPosition(prev => {
             const result = stopAtEdgeOfMap(prev, edgesOfMap)

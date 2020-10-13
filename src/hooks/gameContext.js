@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 export const GameContext = React.createContext();
 
-export const useState = () => {
+export const useGlobalState = () => {
     const { state } = useContext(GameContext);
     return state;
 };
@@ -13,6 +13,6 @@ export const useDispatch = () => {
 };
 
 export const useMainCharacterData = () => {
-    const { mainCharacter } = useState();
+    const { mainCharacter } = useGlobalState();
     return mainCharacter.data;
 }

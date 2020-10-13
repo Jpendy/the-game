@@ -1,15 +1,28 @@
 import { useState } from 'react';
 import { edgesOfMap, edgesOfLake } from '../data/obstacles/obstacles.js'
 import { stopAtEdgeOfMap } from '../utils/utils.js';
-import { useDispatch } from '../hooks/gameContext'
+import { useDispatch, useGlobalState } from '../hooks/gameContext'
 
-export default function useWalk(maxSteps) {
-    const [position, setPosition] = useState({ x: 500, y: 200 })
-    const [dir, setDir] = useState(0);
-    const [step, setStep] = useState(0);
+export default function useWalk(maxSteps, startingPosition) {
     const dispatch = useDispatch()
 
-    // console.log(position)
+    const [position, setPosition] = useState(startingPosition)
+    const [dir, setDir] = useState(0);
+    const [step, setStep] = useState(0);
+
+    const { mainCharacter, enemy } = useGlobalState();
+
+
+
+    // if (mainCharacter.x < (enemy.x + enemy.width) &&
+    //     (mainCharacter.x + mainCharacter.width) > enemy.x &&
+    //     mainCharacter.y < (enemy.y + enemy.height) &&
+    //     (mainCharacter.y + mainCharacter.height) > enemy.y) {
+    //     setPosition({ x: 500, y: 200 })
+    //     setDir(0);
+    //     setStep(0)
+    //     // alert('SPOOKY GHOST GOT YOUUUUU')
+    // }
 
     const directions = {
         down: 0,

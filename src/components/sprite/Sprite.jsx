@@ -3,7 +3,7 @@ import { useMainCharacterData } from '../../hooks/gameContext'
 
 export default function Sprite({ data, position }) {
 
-    const { x_position, y_position, height, width } = data;
+    const { x_position, y_position, height, width, spriteImage } = data;
 
     return (
         <div style={{
@@ -14,7 +14,7 @@ export default function Sprite({ data, position }) {
             width: `${width}px`,
             zIndex: '101',
             transform: "scale(2)",
-            backgroundImage: "url(character-sprite-1.png)",
+            backgroundImage: `url(${spriteImage})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: `-${x_position}px -${y_position}px`,
         }}>
